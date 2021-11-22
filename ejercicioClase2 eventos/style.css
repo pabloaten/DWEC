@@ -1,0 +1,38 @@
+body{
+    animation:animacion 10s infinite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+
+}
+.acordeon{
+    background-color: darkblue;
+    color: white;
+    border: 5px outset cyan ;
+    font-size:20px;
+    width: 100%;
+    display: block;
+}
+.acordeon:hover{
+    background-color:orange;
+}
+.panel{
+    color: black;
+    display: none;
+    
+}
+
+@keyframes animacion {
+    0%{
+        background-color: cyan;
+    }
+    50%{
+        background-color: greenyellow;
+    }
+    75%{
+        background-color:coral
+    }
+    100%{
+        background-color:aquamarine
+    }
+}
+
