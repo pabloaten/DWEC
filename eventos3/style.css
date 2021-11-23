@@ -1,0 +1,35 @@
+body{
+    animation: animacion 4s infinite;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.flujos-eventos div{
+    padding: 4rem;
+    font-size:2rem;
+    text-align: center;
+}
+.uno{
+    background-color: aquamarine;
+   
+}
+.dos{
+    background-color:dodgerblue;
+    
+}
+.tres{
+    background-color:lightblue;
+   
+}
+ @keyframes animacion {
+    0%{
+        background-color:cyan;
+        color: black;
+    }
+    50%{
+        background-color:greenyellow;
+        color: cyan;
+    }
+    100%{
+        background-color:papayawhip;
+        color: black;
+    }
+} 
