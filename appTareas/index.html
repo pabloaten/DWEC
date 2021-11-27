@@ -77,13 +77,34 @@
       }
       h1:hover {
         text-decoration: line-through;
+        color: red;
         cursor: pointer;
         
+      }
+      #buscarTarea{
+        display: flex;
+        width: 500px;
+        height:auto;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #buscarTarea input{
+        width: 100px;
+        height: 30px;
       }
     </style>
   </head>
   <body>
+    
     <div id="contenedor">
+      <div id="buscarTarea">
+        <h2>Contador</h2>
+        <h2 id="contador">0</h2>
+        <input type="text" id="buscador" placeholder="Buscar Tarea"/>
+        <input type="submit" value="Añadir" id="buscar" />
+        <div id="tareaEncontrada"></div>
+      </div>
+      
       <div id="addTarea">
         <h2 id="titulo">Añadir Tareas</h2>
         <input type="text" id="nombreTarea" placeholder="Introduce la tarea" required />
