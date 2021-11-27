@@ -76,30 +76,42 @@
        
       }
       h1:hover {
-        text-decoration: line-through;
+        
         color: red;
+        text-decoration: line-through;
         cursor: pointer;
+        transition: 0.4s;
         
       }
       #buscarTarea{
         display: flex;
-        width: 500px;
+        width: 100%;
         height:auto;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
+      }
+      #buscarTarea h2{
+        
+        align-self: center;
+      }
+      #tareaEncontrada{
+        width:100%;
+       text-align: center;
       }
       #buscarTarea input{
-        width: 100px;
+        width: 90%;
         height: 30px;
       }
+
     </style>
   </head>
   <body>
     
     <div id="contenedor">
       <div id="buscarTarea">
-        <h2>Contador</h2>
-        <h2 id="contador">0</h2>
+        <h2>Contador: &nbsp</h2>
+        <h2 id="contador"> 0 </h2>
         <input type="text" id="buscador" placeholder="Buscar Tarea"/>
         <input type="submit" value="Añadir" id="buscar" />
         <div id="tareaEncontrada"></div>
