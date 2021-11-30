@@ -53,7 +53,8 @@ function eliminar(e) {
   let h = e.target;
   let misTareas = document.getElementById("mistareas");
   misTareas.removeChild(h);
-
+  contador--;
+  actualizarContador();
   for (let a of miArray) {
     console.log(h.innerText);
     let long =a.length;

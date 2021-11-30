@@ -73,53 +73,59 @@
       }
       h1 {
         align-self: center;
-       
       }
       h1:hover {
-        
         color: red;
         text-decoration: line-through;
         cursor: pointer;
         transition: 0.4s;
-        
       }
-      #buscarTarea{
+      #buscarTarea {
         display: flex;
-        width: 100%;
-        height:auto;
+        padding: 10px;
+        height: auto;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
       }
-      #buscarTarea h2{
-        
+      #buscarTarea h2 {
         align-self: center;
       }
-      #tareaEncontrada{
-        width:100%;
-       text-align: center;
+      #tareaEncontrada {
+        width: 100%;
+        text-align: center;
       }
-      #buscarTarea input{
+      #buscarTarea input {
         width: 90%;
+        margin-top:10px;
         height: 30px;
+        background-color:white;
       }
-
+      #buscar:hover {
+        background-color:coral;
+        color: white;
+        transition:0.5s;
+      }
     </style>
   </head>
   <body>
-    
     <div id="contenedor">
       <div id="buscarTarea">
         <h2>Contador: &nbsp</h2>
-        <h2 id="contador"> 0 </h2>
-        <input type="text" id="buscador" placeholder="Buscar Tarea"/>
-        <input type="submit" value="Añadir" id="buscar" />
+        <h2 id="contador">0</h2>
+        <input type="text" id="buscador" placeholder="Buscar Tarea" />
+        <input type="submit" value="Limpiar" id="buscar" />
         <div id="tareaEncontrada"></div>
       </div>
-      
+
       <div id="addTarea">
         <h2 id="titulo">Añadir Tareas</h2>
-        <input type="text" id="nombreTarea" placeholder="Introduce la tarea" required />
+        <input
+          type="text"
+          id="nombreTarea"
+          placeholder="Introduce la tarea"
+          required
+        />
         <input type="submit" value="Añadir" id="enviar" />
       </div>
 
