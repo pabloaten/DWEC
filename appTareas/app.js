@@ -15,6 +15,7 @@ let contador = 0;
 function actualizarContador() {
   let cont = (document.getElementById("contador").innerHTML = contador);
 }
+/**Añado al boton el evento click para añadir tareas */
 boton.addEventListener("click", añadirTarea);
 
 /**
@@ -41,20 +42,39 @@ function obtenerFecha() {
 function añadirTarea() {
   let tarea = document.getElementById("nombreTarea");
   let misTareas = document.getElementById("mistareas");
+  /**
+   * Si esta vacio me pone el borde rojo
+   */
   if (tarea.value === "") {
     tarea.setAttribute("class", "bordeRojo");
+    /**
+     * Si no esta la tarea en mi estructura la crea
+     */
   } else if (!miArray.includes(tarea.value)) {
     contador++;
     tarea.setAttribute("class", "");
+    /**
+     * Creo el elemento h1 y le pongo un evento al hacer click sobre el
+     */
     let h1 = document.createElement("h1");
     h1.addEventListener("click", eliminar);
     let fecha = obtenerFecha();
+    /**
+     * Texto para el h1 con el nombre de la tarea y la fecha
+     */
     let textoh1 = document.createTextNode(tarea.value + " " + fecha);
+    /**Le pongo el texto al h1 y añado la tarea a mi estructura */
     h1.appendChild(textoh1);
     misTareas.appendChild(h1);
     miArray.push(tarea.value);
+    /**
+     * Actualizo el contador y pongo el texto de la caja vacio
+     */
     actualizarContador();
     setTexto();
+    /**
+     * Si ya esta la tarea creada envio un mensaje con un alert
+     */
   } else if (miArray.includes(tarea.value)) {
     alert("Ya hay una tarea así creada");
   }
@@ -71,11 +91,16 @@ function setTexto() {
  * @param {e} Object
  */
 function eliminar(e) {
+  /**Saco el h1 que ha realizado el evento y lo quito */
   let h = e.target;
   let misTareas = document.getElementById("mistareas");
   misTareas.removeChild(h);
   contador--;
   actualizarContador();
+  /**
+   * Lo busco en mi estructura y lo elimino
+   * Lo añado al array de tareas eliminadas y muestro por consola
+   */
   for (let a of miArray) {
     let long = a.length;
     let valor = h.innerText;
@@ -101,9 +126,15 @@ document.addEventListener("keypress", (e) => {
  * Funcion realizar la busqueda
  */
 let buscador = document.getElementById("buscador");
+/**
+ * Saco las teclas que han sido pulsadas dentro del input
+ */
 buscador.addEventListener("keypress", (e) => {
   let tareaEncontrada = document.getElementById("tareaEncontrada");
-
+  /**Si no esta vacio realiza la busqueda
+   * Comprueba con el metodo includes si la palabra contiene esas letras
+   * Si las contiene la añade a un div
+   */
   if (buscador.value === "") {
   } else {
     for (let a of miArray) {
@@ -115,7 +146,9 @@ buscador.addEventListener("keypress", (e) => {
       }
     }
   }
-
+/**
+ * Funcion para resetear el div con las tareas encontradas
+ */
   let buscar = document.getElementById("buscar");
   buscar.addEventListener("click", (e) => {
     let tareaEncontrada = document.getElementById("tareaEncontrada");
