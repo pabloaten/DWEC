@@ -2,6 +2,7 @@
     font-family: "Quicksand", sans-serif;
     background-color: #00ff7f;
   }
+  /*  */
   #contenedor {
     width: 100%;
     height: auto;
@@ -13,6 +14,7 @@
   #addTarea {
     align-self: center;
     padding: 70px;
+    font-size: 1;
     border-bottom: 5px dashed black;
   }
   #nombreTarea {
