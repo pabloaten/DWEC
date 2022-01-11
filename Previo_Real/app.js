@@ -43,3 +43,45 @@ function area2(figura) {
 }
 const area3 = ({ x, y }) => x * y;
 console.log(area(figura));
+/* Destructuring dentro del propio objeto */
+/* const nuevaPersona = {
+  ...persona,
+  nombre: "Lucas",
+}; */
+
+/* 6.- Spread y Rest Operator */
+const array = [1, 2, 3, 4, 5, 6];
+const otroArray = [7, 8, 9, 10, 11, 12, 13, 14];
+const nuevoArray = array.concat(otroArray);
+const nuevoArray2 = [...array, ...otroArray];
+console.log(nuevoArray);
+
+/* 7.-Import y export */
+/* import {a,b,c} from "./suma"
+  export */
+
+/* 8.- Operador condicional ternario */
+const coche = {
+  marca: "peugeot",
+  model: "207",
+};
+let modelo;
+if (coche.model) {
+  modelo = coche.model;
+}
+let modeloNew = coche.model ? coche.model : "X";
+console.log(modeloNew);
+/* 9 PROMESAS */
+/* 10 Nullish coalescing*/
+
+function suma(a, b) {
+  a = a ?? 0;
+  b = b ?? 0;
+  return a + b;
+}
+/* 11.- Optional chaining */
+const persona = {
+  name:"Gerardo",
+  email:"email@gmail.com",
+}
+const titulo = persona?.trabajoActual?.titulo;
